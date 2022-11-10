@@ -1,0 +1,21 @@
+<div *ngIf = "course">
+
+    <div>
+        <h1 >Course {{ course.title }}</h1>  
+        <div>
+            <ul>
+                <li>
+                    Price: {{ course.price }} €
+                </li>
+                <li *ngIf = "author">
+                    Author: {{ author.name }}
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <app-edit-course></app-edit-course>
+
+</div>
+

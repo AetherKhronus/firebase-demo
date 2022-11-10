@@ -1,0 +1,17 @@
+#resetButton {
+
+    background-color: rgb(179, 179, 179);
+
+}
+
+#addButton {
+
+    background-color: lightgreen;
+
+}
+
+.error {
+
+    font-weight: 700;
+    color: red;
+}

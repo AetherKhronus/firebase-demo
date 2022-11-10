@@ -1,0 +1,13 @@
+<h1 class = "centered"> Courses </h1>
+
+<div class = "centered">
+    <ul >
+        <li *ngFor = "let course of courseList | paginate: {itemsPerPage: 8, currentPage: p}; let i = index">
+            <button class = "button-28" role = "button" [routerLink] = "['/course' , course.$key , course.title]">
+                    {{ course.title }}
+            </button>
+        </li>
+    </ul>
+</div>
+
+<app-add-course></app-add-course>

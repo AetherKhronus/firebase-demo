@@ -1,0 +1,105 @@
+<div class = "pt-3 pb-2 mb-3 border-bottom">
+
+    <h2 class = "h2">
+
+        Edit Course
+
+    </h2>
+
+</div>
+
+<form [formGroup] = "editForm" (ngSubmit) = "updateForm()" novalidate>
+
+    <div class = "row">
+
+        <div class = "col-lg-5 col-md-12 col-sm-12">
+            
+            <div class = "row">
+
+                <div class = "col-md-12 mb-3">
+
+                    <label>
+                        Course Name:
+                    </label>
+
+                    <input type = "text" formControlName = "title" class = "form-control" required/>
+                    
+                    <!-- errors-->
+
+                    <p *ngIf = "title?.touched && title?.invalid" class = "error">
+                        <sup>
+                            *
+                        </sup>
+                        Course name is required.
+                    </p>
+
+                    <p *ngIf = "title?.errors?.['minlength']" class = "error">
+                        <sup>
+                            *
+                        </sup>
+                        Course name has a minimum length of 3.
+                    </p>
+
+                </div>
+
+                <div class = "col-md-12 mb-3">
+
+                    <label>
+                        Author:
+                    </label>
+
+                    <input type = "text" formControlName = "author" class = "form-control"/>
+
+                    <!-- errors-->
+
+                    <p *ngIf = "author?.touched && author?.invalid" class = "error">
+                        <sup>
+                            *
+                        </sup>
+                        Course author is required.
+                    </p>
+
+                </div>
+
+                <div class = "col-md-12 mb-3">
+
+                    <label>
+                        Price:
+                    </label>
+
+                    <input type = "number" formControlName = "price" class = "form-control"/>
+
+                    <!-- errors-->
+
+                    <p *ngIf = "price?.touched && price?.invalid" class = "error">
+                        <sup>
+                            *
+                        </sup>
+                        Course price is required.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class = "form-group text-right">
+
+                <button [routerLink] = "['/courses']" class = "button-28 optionsButton" role = "button">
+                    Go Back
+                </button>
+
+                <button id = "deleteButton" class = "button-28 optionsButton" (click) = "deleteCourse(course)">
+                    Delete
+                </button>
+
+                <button type = "submit" id = "addButton" class = "button-28 optionsButton" [disabled] = "!editForm.valid">
+                    Update Course
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
